@@ -22,3 +22,5 @@ The RoboRIO should have the I2C cable plugged into [port 4](https://github.com/b
 
 #### Java
 Since the configuration of your RoboRIO can vary greatly from ours, you may want to modify how the code is run. The most important part is probably changing [when to send the message over I2C](https://github.com/blazingbulldogs/arduino-roborio-i2c-example/blob/master/controller.java#L8).
+
+> Copyright [Jonah Snider](https://github.com/pizzafox) 2018
