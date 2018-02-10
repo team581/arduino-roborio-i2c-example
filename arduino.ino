@@ -1,3 +1,5 @@
+// Copyright Jonah Snider 2018
+
 #include <Wire.h>
 
 void setup()
