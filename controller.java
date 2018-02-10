@@ -1,3 +1,5 @@
+// Copyright Jonah Snider 2018
+
 /* This is outside a method */
 // Open a new I2C connection on port 4
 I2C Wire = new I2C(Port.kOnboard, 4);
