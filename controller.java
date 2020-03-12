@@ -8,16 +8,16 @@ I2C Wire = new I2C(Port.kOnboard, 4);
 
 // If the back button gets pressed, run this
 if (Global.driver.Buttons.Back.changedDown) {
-	// The string message to be sent to the Arduino
-	String WriteString = "go";
-	// Turn the string into a character array
-	char[] CharArray = WriteString.toCharArray();
-	// Make each character a single byte
-	byte[] WriteData = new byte[CharArray.length];
-	// For each item in the character array, add it as a single byte to the I2C connection
-	for (int i = 0; i < CharArray.length; i++) {
-		WriteData[i] = (byte) CharArray[i];
+	sendInfo(Wire, "Test String");
+}
+
+public static void sendInfo(I2C Device, string text){
+	char[] CharArray = text.toCharArray(); // Turn the string into a character array
+	
+	byte[] WriteData = new byte[CharArray.length]; //make a new array to fill with bytes
+	for(int i = 0; i < CharArray.length; i++){
+		WriteData[i] = (byte)CharArray[i]; //turn each char into bytes and add it to the byte array
 	}
-	// Send the data to the I2C connection
-	Wire.transaction(WriteData, WriteData.length, null, 0);
+
+	Device.transaction(WriteData, WriteData.length, null, 0); //send byte array to device
 }
